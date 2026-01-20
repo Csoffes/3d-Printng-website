@@ -1,0 +1,551 @@
+/* =====================
+   Global Reset & Fonts
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2933;
+    line-height: 1.6;
+    padding-bottom: 4rem;
+}
+
+/* =====================
+   Headings
+   ===================== */
+h1, h2 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+/* =====================
+   Hero / Heading Section
+   ===================== */
+.heading {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.heading p {
+    max-width: 600px;
+    margin: 0.75rem auto 0;
+    color: #cbd5e1;
+}
+
+/* =====================
+   Products Navigation
+   ===================== */
+.products {
+    background: white;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.products ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center; /* <-- this centers the links horizontally */
+    padding: 0;
+}
+
+.products a {
+    text-decoration: none;
+    color: #0f172a;
+    padding: 0.6rem 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.products a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* =====================
+   Listings Grid
+   ===================== */
+body > .listings {
+    display: inline-block;
+}
+
+.listings {
+    background: white;
+    width: 260px;
+    margin: 1rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.listings:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.listings h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.listings p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 0.75rem;
+}
+
+.listings img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 0.75rem 0;
+    background: #f8fafc;
+}
+
+.listings p:last-child {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* =====================
+   Listings Layout Wrapper
+   ===================== */
+body {
+    text-align: center;
+}
+
+body > .listings {
+    display: inline-block;
+}
+
+/* =====================
+   Pagination
+   ===================== */
+body > div:nth-last-of-type(2) {
+    margin-top: 3rem;
+}
+
+body > div:nth-last-of-type(2) a {
+    margin: 0 0.4rem;
+    padding: 0.5rem 0.8rem;
+    text-decoration: none;
+    border-radius: 6px;
+    background: #e5e7eb;
+    color: #111827;
+    font-weight: 500;
+}
+
+body > div:nth-last-of-type(2) a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* =====================
+   Contact Section
+   ===================== */
+body > div:last-of-type {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    background: #0f172a;
+    color: white;
+}
+
+body > div:last-of-type p {
+    color: #cbd5e1;
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 768px) {
+    .products ul {
+        flex-direction: column;
+    }
+
+    .listings {
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
+
+/* =====================
+   Cart Button
+   ===================== */
+#cart-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* =====================
+   Cart Sidebar
+   ===================== */
+#cart {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 360px;
+    height: 100vh;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart.open {
+    right: 0;
+}
+
+#cart h2 {
+    margin-bottom: 1rem;
+}
+
+/* =====================
+   Cart Items
+   ===================== */
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.cart-item span {
+    font-size: 0.9rem;
+}
+
+.cart-controls button {
+    background: #e5e7eb;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* =====================
+   Cart Footer
+   ===================== */
+#cart-footer {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =====================
+   Cart Text Visibility Fix
+   ===================== */
+#cart {
+    color: #0f172a;
+}
+
+#cart h2 {
+    color: #0f172a;
+}
+
+.cart-item span {
+    color: #111827;
+}
+
+.cart-controls span {
+    color: #111827;
+}
+
+.cart-controls button {
+    color: #111827;
+    font-weight: 600;
+}
+.cart-item {
+    background: #f8fafc;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cart-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+#cart-total {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+#cart-footer p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111827;  /* <- this affects the whole text */
+}
+/* =====================
+   Add to Cart Buttons
+   ===================== */
+.add-to-cart {
+    background: #2563eb;        /* nice blue color */
+    color: white;               /* text color */
+    border: none;               /* remove default border */
+    padding: 0.6rem 1.2rem;     /* vertical + horizontal padding */
+    border-radius: 8px;         /* rounded corners */
+    font-weight: 600;           /* bold text */
+    cursor: pointer;            /* pointer on hover */
+    transition: all 0.2s ease;  /* smooth hover transition */
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle shadow */
+}
+
+.add-to-cart:hover {
+    background: #1d4ed8;        /* slightly darker blue */
+    transform: translateY(-2px); /* subtle lift on hover */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.add-to-cart:active {
+    transform: translateY(0);    /* reset on click */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.add-to-cart:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4); /* focus ring */
+}
+.listings .add-to-cart {
+    width: 100%;
+    margin-top: 0.75rem;
+}
+.checkout-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.checkout-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.order-summary, .shipping-form {
+    margin-bottom: 2rem;
+}
+
+.order-summary h2, .shipping-form h2 {
+    margin-bottom: 1rem;
+}
+
+#checkout-items .checkout-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+#checkout-items .checkout-item span {
+    font-weight: 500;
+}
+
+.shipping-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.shipping-form input {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.checkout-btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ====== Checkout page styling ====== */
+.checkout-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.order-summary h2, .shipping-form h2 {
+    margin-bottom: 1rem;
+}
+
+#checkout-items .checkout-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.checkout-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 6px;
+    background: #f1f5f9;
+}
+
+.checkout-item .item-info {
+    flex: 1;
+}
+
+.shipping-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.shipping-form input {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.checkout-btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background: #1d4ed8;
+}
+
+.checkout-total {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+.listings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* keeps add-to-cart button at bottom */
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    min-height: 360px; /* same height for all cards */
+    overflow: hidden;
+}
+
+.listings h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.listings p {
+    flex-grow: 1; /* push button to bottom */
+}
+
+.listings img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.admin-container {
+    overflow-x: auto;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics Dashboard</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-card {
+      background: #020617;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+
+    button,
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn {
+  text-decoration: none;
+  color: #111;
+  display: inline-flex;
+  align-items: center;
+}
+
+#logout {
+  background: #ef4444;
+  color: white;
+}
+
+#refresh-orders {
+  background: #2563eb;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>📊 Store Analytics</h1>
+  <div class="heading-right">
+    <button id="refresh-orders">Refresh</button>
+    <a href="index1.html" class="btn">Back to Store</a>
+    <a href="admin.html" class="btn">Back to Admin</a>
+    <a href="admin-login.html" class="btn" id="logout">Logout</a>
+
+  <div class="chart-card">
+    <h2>Best Sellers (Units)</h2>
+    <canvas id="bestSellersChart" height="100"></canvas>
+
+  </div>
+
+  <div class="chart-card">
+    <h2>Top Sellers (Revenue)</h2>
+    <canvas id="topRevenueChart" height="100"></canvas>
+  </div>
+
+  <script src="analytics.js"></script>
+</body>
+</html>
