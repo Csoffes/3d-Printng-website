@@ -1,5 +1,5 @@
 async function loadBestSellers() {
-  const res = await fetch("https://69.164.193.187:3000/api/admin/analytics/best-sellers");
+  const res = await fetch("http://69.164.193.187:3000/api/admin/analytics/best-sellers");
   const data = await res.json();
 
   if (!data.success) return;

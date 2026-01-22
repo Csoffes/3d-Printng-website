@@ -28,6 +28,76 @@
   .admin-filters { margin-bottom:1rem; display:flex; gap:1rem; flex-wrap:wrap; }
   .admin-filters input, .admin-filters select { padding:0.5rem; border-radius:6px; border:1px solid #1e293b; background:#1e293b; color:#e5e7eb; }
   .pagination { margin-top:1rem; display:flex; justify-content:space-between; align-items:center; }
+  /* ---------- Buttons (Analytics Style) ---------- */
+button,
+.btn {
+  appearance: none;
+  background: linear-gradient(180deg, #1e293b, #020617);
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04),
+              0 6px 18px rgba(0,0,0,0.35);
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: #334155;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ---------- Primary (Analytics CTA) ---------- */
+.primary {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+  color: white;
+}
+
+.primary:hover {
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+}
+
+/* ---------- Danger ---------- */
+.danger {
+  background: linear-gradient(180deg, #f87171, #ef4444);
+  border-color: #ef4444;
+  color: white;
+}
+
+/* ---------- Icon-only / subtle buttons ---------- */
+.btn-icon {
+  padding: 0.5rem;
+  width: 38px;
+  height: 38px;
+}
+
+/* ---------- Heading buttons spacing ---------- */
+.heading-right button,
+.heading-right .btn {
+  height: 40px;
+}
+#logout {
+  background: linear-gradient(180deg, #f87171, #ef4444);
+  border-color: #ef4444;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -39,8 +109,8 @@
   <div class="heading-right">
     <button id="refresh-orders">Refresh</button>
     <a href="index.html" class="btn">Back to Store</a>
-    <a href="admin-login.html" class="btn" id="logout">Logout</a>
     <button onclick="window.location.href='admin-analytics.html'" class="btn">📊 Analytics</button>
+    <a href="admin-login.html" class="btn" id="logout">Logout</a>
   </div>
 </div>
 

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const res = await fetch("https://69.164.193.187:3000/api/create-checkout-session", {
+      const res = await fetch("http://69.164.193.187:3000/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),

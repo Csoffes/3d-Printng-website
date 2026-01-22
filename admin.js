@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const TABLE_BODY = document.querySelector("#orders-table tbody");
     const REFRESH_BTN = document.getElementById("refresh-orders");
-    const BACKEND_URL = "https://69.164.193.187:3000"; // replace with your backend
+    const BACKEND_URL = "http://69.164.193.187:3000"; // replace with your backend
     const SEARCH_INPUT = document.getElementById("search-input");
     const STATUS_FILTER = document.getElementById("status-filter");
     const PAGE_INFO = document.getElementById("page-info");
